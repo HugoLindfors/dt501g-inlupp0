@@ -1,0 +1,63 @@
+struct Book:
+  string authorLastName;
+  string authorFirstName;
+  string title;
+  string yearOfPuplication;
+
+Algorithm SortBooks(unsortedBooks: Book[]):
+
+  Book[] sortedBooks <- [];
+  boolean booksAreSorted <- false;
+
+  for unsortedBook in unsortedBooks
+    for unsortedLetter in unsortedBook.authorLastName
+      for sortedBook in sortedBooks
+        for sortedLetter in sortedBook.authorLastName
+          if unsortedLetter < sortedLetter
+            sortedBooks.insert(sortedBooks.index(sortedBook - 1), book)
+            booksAreSorted = true
+          end if
+        end for
+      end for
+    end for
+
+    if ~booksAreSorted
+      for unsortedLetter in unsortedBook.authorFirstName
+        for sortedBook in sortedBooks
+          for sortedLetter in sortedBook.authorFirstName
+            if unsortedLetter < sortedLetter
+              sortedBooks.insert(sortedBooks.index(sortedBook - 1), book)
+              booksAreSorted = true
+            end if
+          end for
+        end for
+      end for
+    end if
+
+    if ~booksAreSorted
+      for unsortedLetter in unsortedBook.title
+        for sortedBook in sortedBooks
+          for sortedLetter in sortedBook.title
+            if letunsortedLetter < sortedLetter
+              sortedBooks.insert(sortedBooks.index(sortedBook - 1), book)
+              booksAreSorted = true
+            end if
+          end for
+        end for
+      end for
+    end if
+
+    if ~yearOfPuplication
+      for unsortedLetter in unsortedBook.yearOfPuplication
+        for sortedBook in sortedBooks
+          for sortedLetter in sortedBook.yearOfPuplication
+            if letunsortedLetter < sortedLetter
+              sortedBooks.insert(sortedBooks.index(sortedBook - 1), book)
+              booksAreSorted = true
+            end if
+          end for
+        end for
+      end for
+    end if
+  end for
+end Algorithm

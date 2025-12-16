@@ -1,0 +1,11 @@
+Algorithm CountUp(M):
+
+        m <- 1
+
+        if M > 1
+                while m <= M:
+                        ++m
+                        print(m)
+                end while
+        end if
+end Algorithm
